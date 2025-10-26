@@ -95,7 +95,7 @@ public class BST extends BinaryTree {
 		return node;		
 	}
 	
-	private Node removeNode(Node node) {
+	protected Node removeNode(Node node) {
 		if (node.isLeaf()) {
 			return null;
 		}

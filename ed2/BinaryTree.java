@@ -191,4 +191,8 @@ public class BinaryTree {
 				+ ", root => { " + root + " }";				
 	}
 
+    public Node getRoot() {
+        return root;
+    }
+
 }

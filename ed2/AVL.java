@@ -135,5 +135,87 @@ public class AVL extends BST {
 				+ ", getHeight(): " + getHeight()
 				+ ", root => { " + root + " }";				
 	}
+	
+	////////
+	@Override
+    public void insert(int data) {
+        root = insert(root, null, data);
+    }
+    
+    @Override
+    protected Node insert(Node node, Node parent, int data) {
+        if (node == null) {
+            return new Node(data, parent);
+        }
+    
+        int diff = data - node.getData();
+    
+        if (diff < 0) {
+            node.setLeft(insert(node.getLeft(), node, data));
+        } else if (diff > 0) {
+            node.setRight(insert(node.getRight(), node, data));
+        } else {
+            throw new RuntimeException("Essa AVL não pode ter duplicatas!");
+        }
+    
+        return rebalance(node);
+    }
+    
+    	////////
+    @Override
+    public void remove(int data) {
+        root = remove(root, data);
+    }
+    
+    @Override
+    protected Node remove(Node node, int data) {
+        if (node == null) {
+            throw new RuntimeException("Nó com chave " + data + " não existe na AVL!");
+        }
+    
+        int diff = data - node.getData();
+    
+        if (diff < 0) {
+            node.setLeft(remove(node.getLeft(), data));
+        } else if (diff > 0) {
+            node.setRight(remove(node.getRight(), data));
+        } else {
+            node = removeNode(node);
+        }
+    
+        if (node != null) {
+            node = rebalance(node);
+        }
+    
+        return node;
+    }
 
+    	////////
+    private Node rebalance(Node node) {
+        if (node == null) return null;
+    
+        int bf = node.getBalanceFactor();
+    
+        if (bf < -1) {
+            if (node.getLeft().getBalanceFactor() <= 0) {
+                System.out.println("Aplicando rotação RR");
+                return rotateRight(node);
+            } else {
+                System.out.println("Aplicando rotação LR");
+                return rotateLeftRight(node);
+            }
+        } else if (bf > 1) {
+            if (node.getRight().getBalanceFactor() >= 0) {
+                System.out.println("Aplicando rotação LL");
+                return rotateLeft(node);
+            } else {
+                System.out.println("Aplicando rotação RL");
+                return rotateRightLeft(node);
+            }
+        }
+    
+        return node;
+    }
+
+ 
 }
