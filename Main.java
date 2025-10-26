@@ -22,8 +22,6 @@ public class Main {
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
 
-        // printTree(avl);
-
         avl.clear();
 
         System.out.println("Item b");
@@ -31,7 +29,6 @@ public class Main {
         avl.insert(3);
         avl.insert(2);
         avl.insert(1);
-        // printTree(avl);
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
 
@@ -42,7 +39,6 @@ public class Main {
         avl.insert(3);
         avl.insert(1);
         avl.insert(2);
-        // printTree(avl);
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
 
@@ -53,7 +49,6 @@ public class Main {
         avl.insert(1);
         avl.insert(3);
         avl.insert(2);
-        // printTree(avl);
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
 
@@ -65,49 +60,27 @@ public class Main {
         for (int v : values) {
             avl.insert(v);
         }
-        // printTree(avl);
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
 
         System.out.println("Item f");
         System.out.println("----- Remoção do nó 4 -----");
         avl.remove(4);
-        // printTree(avl);
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
 
         System.out.println("Item g");
         System.out.println("----- Remoção do nó 5 -----");
         avl.remove(5);
-        // printTree(avl);
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
 
         System.out.println("Item h");
         System.out.println("----- Remoção do nó 1 -----");
         avl.remove(1);
-        // printTree(avl);
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
 
     }
 
-    private static void printTree(AVL tree) {
-        System.out.println("Em ordem: \n" + tree.inReversedOrderAscii());
-        System.out.println("Por nível: \n" + tree.levelOrderTraversal());
-        System.out.println("Dados dos nós:");
-        printNodeDetails(tree.getRoot());
-        System.out.println();
-    }
-
-    private static void printNodeDetails(Node node) {
-        if (node == null) return;
-        printNodeDetails(node.getLeft());
-        System.out.println("Nó " + node.getData() +
-                " | Pai: " + (node.getParent() != null ? node.getParent().getData() : "null") +
-                " | Esq: " + (node.getLeft() != null ? node.getLeft().getData() : "null") +
-                " | Dir: " + (node.getRight() != null ? node.getRight().getData() : "null") +
-                " | BF: " + node.getBalanceFactor());
-        printNodeDetails(node.getRight());
-    }
 }
