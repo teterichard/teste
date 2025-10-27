@@ -15,6 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
+// Carolyne Gomes Silva - RA: 12345678
+// Maria Teresa Richard Dias - RA: 10386449
+//
 
 package ed2;
 

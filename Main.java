@@ -2,8 +2,9 @@
 // Árvore AVL (Rotações) - Exemplo de implementação em Java
 // Copyright (C) 2024 André Kishimoto
 //
-// Maria da Silva - RA: 12345678
-// Referências: slides da aula, documentação Java, ChatGPT
+// Carolyne Gomes Silva - RA: 12345678
+// Maria Teresa Richard Dias - RA: 10386449
+// Referências: slides da aula e site https://www.happycoders.eu/algorithms/avl-tree-java/
 //
 
 import ed2.AVL;
