@@ -4,6 +4,7 @@
 //
 // Carolyne Gomes Silva - RA: 10436604
 // Maria Teresa Richard Dias - RA: 10386449
+//Anna Carolina Rezende Garrido - RA: 10443894 
 // Referências: slides da aula e site https://www.happycoders.eu/algorithms/avl-tree-java/
 //
 
