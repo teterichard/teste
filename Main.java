@@ -2,7 +2,7 @@
 // Árvore AVL (Rotações) - Exemplo de implementação em Java
 // Copyright (C) 2024 André Kishimoto
 //
-// Carolyne Gomes Silva - RA: 12345678
+// Carolyne Gomes Silva - RA: 10436604
 // Maria Teresa Richard Dias - RA: 10386449
 // Referências: slides da aula e site https://www.happycoders.eu/algorithms/avl-tree-java/
 //
@@ -60,6 +60,8 @@ public class Main {
         int[] values = {5, 4, 3, 1, 2, 6, 7, 9, 8};
         for (int v : values) {
             avl.insert(v);
+            // System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
+
         }
         System.out.println("Em ordem: \n" + avl.inReversedOrderAscii());
 		System.out.println("Por nível: \n" + avl.levelOrderTraversal());
